@@ -13,7 +13,7 @@ const page = ({ params }) => {
   });
   console.log(s.id)
   const [color,setColor]=useState(s.color[0])
-  const { handleAddToCart,amount,product } = useCart();
+  const { handleAddToCart,amount,product } = useCart;
 
   return (
    
@@ -21,9 +21,7 @@ const page = ({ params }) => {
     <div className="container mt-3 color-section">
       <div className="row g-3">
         <Link href="/" className="fw-bold">Home{pathname}</Link>
-        <div className="col-md-4">
-          <img className="w-100 h-auto" src={`../${s.image}`} alt="j" />
-        </div>
+      
         <div className="col-md-8">
           <div className="content ms-2 pt-2 pb-2">
             <h3 className="mb-3">{s.name}</h3>
