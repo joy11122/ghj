@@ -1,3 +1,4 @@
+"use client"
 import Quantity from "@/app/component/Quantity";
 import { useCart } from "@/src/context/cartContext";
 
