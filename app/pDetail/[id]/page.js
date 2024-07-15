@@ -3,11 +3,11 @@ import Quantity from "@/app/component/Quantity";
 import { useCart } from "@/src/context/cartContext";
 import { productList } from "@/src/data/data";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+
 import React, { useState } from "react";
 
 const page = ({ params }) => {
-  var pathname=usePathname()
+
   const s = productList.find((elm) => {
     return elm.id === params.id;
   });
@@ -33,7 +33,7 @@ const page = ({ params }) => {
             </div>
             <p>{s.description}</p>
             <h6>
-           
+   
               <span className="text-primary  me-2">Prime</span>FREE Delivery by
               Monday October <span className="fw-bold">24</span>
             </h6>
