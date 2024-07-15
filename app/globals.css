@@ -1,0 +1,468 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background-color: rgb(77, 77, 150);
+    width: 100%;
+    height: 100vh;
+}
+
+.bg {
+    background-color: rgb(250, 250, 250);
+}
+
+.topnavbar {
+    display: block;
+}
+
+.topnavbar i {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.topnavbar i:hover {
+    background-color: crimson;
+    padding: 5px 9px;
+    transition: 0.5s ease;
+    color: white;
+}
+
+.midnavbar i:hover {
+    background-color: crimson;
+    padding: 5px 9px;
+    transition: 0.5s ease;
+    color: white;
+    border-radius: 50%;
+}
+
+select {
+    border: 0;
+    outline: 0;
+
+    font-size: 20px;
+    background-color: transparent;
+}
+
+@media(max-width:750px) {
+    .topnavbar {
+        display: none;
+    }
+
+    .cat .u {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .contact #cleftc {
+        display: none;
+    }
+
+    .n {
+        display: none;
+    }
+
+    .midnavbar .cart {
+        visibility: hidden;
+    }
+
+
+    .midnavbar .cart-wraper {
+        display: none;
+    }
+
+    .midnavbar input {
+        width: 85%;
+        padding: 5px;
+        border-radius: 7px;
+        outline: none;
+
+    }
+
+
+
+    .banner .leftdivcontent {
+        position: absolute;
+        top: 50%;
+
+        transform: translateY(-50%);
+
+    }
+
+
+}
+
+
+
+.midnavbar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+
+}
+
+.midnavbar input {
+    width: 70%;
+    padding: 5px;
+    border-radius: 17px;
+    outline: none;
+
+}
+
+::placeholder {
+    font-size: 20px;
+    margin-left: 10px;
+    color: black;
+    padding: 9px;
+}
+
+.cat ul li {
+    text-decoration: none;
+    list-style: none;
+    font-size: 15px;
+    padding: 5px 9px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.cat ul li:hover {
+    background-color: rgb(230, 32, 26);
+    border-radius: 5px;
+    color: #f7f4f4;
+    transition: 0.5s ease-in-out;
+}
+
+.banner {
+    width: 100%;
+    height: 350px;
+    background-image: url("../public/images/card1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    position: relative;
+
+}
+
+.banner .leftdivcontent {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+
+}
+
+
+.hero img {
+    height: 100vh;
+    width: 100%;
+}
+
+.cardsec .crd img:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease;
+}
+
+.cardsec {
+    flex-wrap: wrap;
+}
+
+footer li {
+    list-style: none;
+    font-size: 18px;
+    text-decoration: none;
+
+    padding: 10px;
+    cursor: pointer;
+}
+
+footer {
+    border-top-left-radius: 100px;
+}
+
+.flink {
+    position: relative;
+}
+
+Link {
+    position: relative;
+}
+
+link::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: crimson;
+    transition: 0.5s ease;
+    transform-origin: center;
+    bottom: -5px;
+    scale: 0;
+    left: 0;
+
+}
+
+.flink Link:hover::after {
+    scale: 1;
+
+}
+
+footer input {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    color: azure;
+    width: 100%;
+    border-bottom: 2px solid rgb(146, 6, 6);
+}
+
+.contact form input {
+    padding: 6px;
+    outline: 0;
+    border: 0;
+    border-radius: 15px;
+    margin-right: 10px;
+    width: 100%;
+}
+
+.contact form textarea {
+
+    outline: 0;
+    border: 0;
+    border-radius: 6px;
+    margin-top: 10px;
+    width: 100%;
+    height: 180px;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart .round {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: -24%;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    background-color: red;
+    font-size: 20px;
+}
+
+.productDespan label span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.productDespan #black {
+    background-color: rgb(15, 14, 15);
+}
+
+.productDespan #red {
+    background-color: rgb(163, 6, 19);
+}
+
+.productDespan #green {
+    background-color: rgb(33, 139, 56);
+}
+
+.productDespan #blue {
+    background-color: rgb(49, 14, 252);
+}
+
+.productDespan #yellow {
+    background-color: rgb(241, 219, 16);
+}
+
+.productDespan #crimson {
+    background-color: rgb(214, 5, 33);
+}
+
+
+.productDespan label input:checked+span {
+    transform: scale(0.8);
+
+}
+
+.productDe .fimage {
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: fit-content;
+    display: inline-block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+    justify-content: space-between;
+
+}
+
+.service-background {
+    background-color: rgb(243, 235, 235);
+
+}
+
+.filtersection input {
+    width: 100%;
+    outline: 0;
+    border-radius: 5px;
+    margin-bottom: 2px;
+}
+
+.filtersection input::placeholder {
+    color: crimson;
+    padding-left: 6px;
+
+}
+
+.category-sec {
+    margin-top: 5px;
+
+
+}
+
+.category-sec button {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    outline: 0;
+    margin-top: 5px;
+    background-color: transparent;
+
+
+}
+
+.company-sec select {
+    width: 100%;
+    outline: 0;
+    border-radius: 5px;
+    margin-bottom: 2px;
+}
+
+.color-sec {
+    margin-top: 25px;
+}
+
+.color-sec label input {
+    display: none;
+}
+
+.color-sec label input:checked+span {
+    transform: scale(0.7);
+    box-shadow: 0 0 0 4px #fff, 0 0 0 6px #000;
+}
+
+.color-sec label span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+
+}
+
+.price-sec {
+    margin-top: 25px;
+}
+
+.clear-sec {
+    margin-top: 25px;
+}
+
+.card-sec .w {
+    width: calc(100%/3);
+}
+
+@media(max-width:400px) {
+    .card-sec .w {
+        width: calc(100%/1);
+    }
+
+    .filtersection {
+        display: none;
+    }
+
+    .card-sec {
+        width: 100%;
+    }
+
+    .card-sec .w {
+        width: 100%;
+        padding: 0;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+        text-align: center;
+    }
+    .grid .total{
+        display: none;
+    }
+    
+
+
+
+
+
+
+
+
+}
+
+.Producttwo .sidebar {
+    width: 20%;
+    background-color: rgb(255, 255, 255);
+    padding-left: 10px;
+}
+
+.Producttwo .rightside {
+    width: 80%;
+    background-color: #f7f4f4;
+}
+
+.active {
+    text-decoration: dotted;
+    color: crimson;
+
+}
+
+#fproductlink:hover {
+
+    border-radius: 5px;
+    transition: 0.5s ease;
+    border: 1px solid black;
+    transform: scale(1.04);
+}
+
+.color-section button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    border: 0;
+    margin-right: 10px;
+}
+
+.check {
+    background-color: crimson;
+    width: 200px;
+}
