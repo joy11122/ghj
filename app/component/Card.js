@@ -22,7 +22,7 @@ const Card = (props) => {
           <del className="fw-bolder">{props.price+100}</del>
         </div>
         <div className="btn-group mt-2">
-          <Link href={`/pDetail/${props.id}`}>
+          <Link href={`/PrDetail/${props.id}`}>
             <button className="btn btn-info rounded-end-0">Detail</button>
           </Link>
           <Link href="/Product" className="btn btn-primary">
