@@ -7,7 +7,7 @@ const Page = ({ params }) => {
   const { product, handleAddToCart, amount } = useCart();
   const s = product.find((elm) => elm.id === params.id);
 
-  // Check if s or s.color exists before using useState
+ 
   const initialColor = s && s.color && s.color.length > 0 ? s.color[0] : null;
   const [color, setColor] = useState(initialColor);
 
