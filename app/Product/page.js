@@ -5,7 +5,7 @@ import Category from '../component/Category'
 const page = () => {
     return (
         <>
-        <div className='container'>
+        <div className='container mt-5 p-3'>
         <Category/>
         </div>
        

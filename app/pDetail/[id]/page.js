@@ -3,11 +3,11 @@ import Quantity from "@/app/component/Quantity";
 import { useCart } from "@/src/context/cartContext";
 import { productList } from "@/src/data/data";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+
 import React, { useState } from "react";
 
 const page = ({ params }) => {
-  var pathname=usePathname()
+ console.log(productList)
   const s = productList.find((elm) => {
     return elm.id === params.id;
   });
@@ -18,9 +18,9 @@ const page = ({ params }) => {
   return (
    
      <>
-    <div className="container mt-3 color-section">
+    <div className="container mt-5 p-5 color-section">
       <div className="row g-3">
-        <Link href="/" className="fw-bold">Home{pathname}</Link>
+        <Link href="/" className="fw-bold">Home</Link>
         <div className="col-md-4">
           <img className="w-100 h-auto" src={`../${s.image}`} alt="j" />
         </div>

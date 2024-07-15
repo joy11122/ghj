@@ -3,20 +3,18 @@ import { useCart } from "@/src/context/cartContext";
 import Link from "next/link";
 import React from "react";
 import { delivery_Charge, tax } from "./Constant";
- 
 
 const CartList = ({ CartItem }) => {
-  const total = localStorage.getItem("CartItem") && JSON.parse(localStorage.getItem("CartItem"));
+  const total =
+    localStorage.getItem("CartItem") &&
+    JSON.parse(localStorage.getItem("CartItem"));
 
   const totalPrice = total.reduce((acc, item) => {
     const itemTotalPrice = item.price * item.quantity;
     return acc + itemTotalPrice;
   }, 0);
-  
-  console.log(totalPrice);
-  
-  console.log(CartItem);
-  const { deleteItem, ClearAll, state } = useCart();
+
+  const { deleteItem, ClearAll } = useCart();
   if (!CartItem || CartItem.length === 0) {
     return (
       <div className="p-5">
@@ -27,14 +25,14 @@ const CartList = ({ CartItem }) => {
 
   return (
     <>
-      <div className="container">
+      <div className="container mt-5 p-3">
         <div className="grid fw-bold">
           <div>image</div>
           <div className="total">Total</div>
           <div>Quantity</div>
           <div>Single Price</div>
           <div>Action</div>
-          {CartItem.map((item,i) => {
+          {CartItem.map((item, i) => {
             return (
               <>
                 <div>
@@ -44,7 +42,9 @@ const CartList = ({ CartItem }) => {
                     alt="g"
                   />
                 </div>
-                <div className="total">{Math.round(item.price * item.quantity)}</div>
+                <div className="total">
+                  {Math.round(item.price * item.quantity)}
+                </div>
                 <div>{item.quantity}</div>
                 <div>{item.price}</div>
                 <div>
@@ -58,12 +58,12 @@ const CartList = ({ CartItem }) => {
           })}
         </div>
 
-
         <div className="d-flex  justify-content-between mt-3 mb-3">
           <Link className="btn  btn-sm btn-primary rounded-0 " href="/Product">
             Continue Shopping
           </Link>
-          <Link href="#"
+          <Link
+            href="#"
             className="btn  btn-sm btn-danger rounded-0"
             onClick={() => ClearAll()}
           >
@@ -71,29 +71,28 @@ const CartList = ({ CartItem }) => {
           </Link>
         </div>
 
-
-         
-         <div className="d-flex text-dark justify-content-between ">
-              <p>Tax:</p>
-              <p className="fw-bold">{Math.round(totalPrice*tax/100)}</p>
-            </div>
-            <div className="d-flex text-dark justify-content-between ">
-              <p>Shipping Fee:</p>
-              <p className="fw-bold">{delivery_Charge}</p>
-            </div>
-            <div className="d-flex text-dark justify-content-between ">
-              <p>Total:</p>
-              <p className="fw-bold">{totalPrice}</p>
-            </div>
-            <hr className="text-dark mt-0" />
-            <div className="d-flex text-dark justify-content-between ">
-              <p className="fw-bold">Sub Total:</p>
-              <p className="fw-bolder">{Math.round(totalPrice + delivery_Charge + (totalPrice * tax) / 100)}</p>
-            </div>
-         </div>
-
- 
-     
+        <div className="d-flex text-dark justify-content-between ">
+          <p>Tax:</p>
+          <p className="fw-bold">{Math.round((totalPrice * tax) / 100)}</p>
+        </div>
+        <div className="d-flex text-dark justify-content-between ">
+          <p>Shipping Fee:</p>
+          <p className="fw-bold">{delivery_Charge}</p>
+        </div>
+        <div className="d-flex text-dark justify-content-between ">
+          <p>Total:</p>
+          <p className="fw-bold">{totalPrice}</p>
+        </div>
+        <hr className="text-dark mt-0" />
+        <div className="d-flex text-dark justify-content-between ">
+          <p className="fw-bold">Sub Total:</p>
+          <p className="fw-bolder">
+            {Math.round(
+              totalPrice + delivery_Charge + (totalPrice * tax) / 100
+            )}
+          </p>
+        </div>
+      </div>
     </>
   );
 };

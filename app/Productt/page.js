@@ -3,7 +3,7 @@ import Producttwo from '../component/Producttwo'
 
 const page = () => {
     return (
-        <div>
+        <div className='mt-5 p-2'>
         <Producttwo/>
         </div>
     )
