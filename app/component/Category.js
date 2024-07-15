@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import { productList } from "@/src/data/data";
 import Card from "./Card";
-import { all } from "axios";
+
 
 const Category = () => {
   const [categories, setCategories] = useState("All");
