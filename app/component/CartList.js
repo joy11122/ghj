@@ -1,20 +1,24 @@
-"use client";
 import { useCart } from "@/src/context/cartContext";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { delivery_Charge, tax } from "./Constant";
 
 const CartList = ({ CartItem }) => {
-  const total =
-    localStorage.getItem("CartItem") &&
-    JSON.parse(localStorage.getItem("CartItem"));
-
-  const totalPrice = total.reduce((acc, item) => {
-    const itemTotalPrice = item.price * item.quantity;
-    return acc + itemTotalPrice;
-  }, 0);
-
   const { deleteItem, ClearAll } = useCart();
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    const calculateTotalPrice = () => {
+      if (typeof window !== 'undefined') {
+        const totalItems = JSON.parse(localStorage.getItem("CartItem") || "[]");
+        const totalPrice = totalItems.reduce((acc, item) => {
+          return acc + (item.price * item.quantity);
+        }, 0);
+        setTotalPrice(totalPrice);
+      }
+    };
+    calculateTotalPrice();
+  }, []);
 
   if (!CartItem || CartItem.length === 0) {
     return (
@@ -27,7 +31,7 @@ const CartList = ({ CartItem }) => {
   return (
     <div className="container mt-5 p-3">
       <div className="grid fw-bold">
-        <div>image</div>
+        <div>Image</div>
         <div className="total">Total</div>
         <div>Quantity</div>
         <div>Single Price</div>
@@ -55,16 +59,15 @@ const CartList = ({ CartItem }) => {
       </div>
 
       <div className="d-flex justify-content-between mt-3 mb-3">
-        <Link className="btn btn-sm btn-primary rounded-0" href="/Product">
+        <Link href="/Product" className="btn btn-sm btn-primary rounded-0">
           Continue Shopping
         </Link>
-        <Link
-          href="#"
+        <button
           className="btn btn-sm btn-danger rounded-0"
           onClick={() => ClearAll()}
         >
           Clear Cart
-        </Link>
+        </button>
       </div>
 
       <div className="d-flex text-dark justify-content-between">
