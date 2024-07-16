@@ -9,8 +9,8 @@ const CartList = ({ CartItem }) => {
 
   useEffect(() => {
     const calculateTotalPrice = () => {
-      if (typeof window !== 'undefined') {
-        const totalItems = JSON.parse(localStorage.getItem("CartItem") || "[]");
+      if (typeof window !== 'undefined' && localStorage.getItem("CartItem")) {
+        const totalItems = JSON.parse(localStorage.getItem("CartItem"));
         const totalPrice = totalItems.reduce((acc, item) => {
           return acc + (item.price * item.quantity);
         }, 0);
