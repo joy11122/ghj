@@ -1,18 +1,19 @@
 "use client"
 import React, { createContext, useContext, useEffect, useReducer } from "react";
 import { cartReducer } from "../Reducer/CartReducer";
-import { productList } from "../data/data";
+import { productList } from "../data/DataList";
 
 const CartContext = createContext();
 
 const getLocalData = () => {
-  let localSData =localStorage.getItem("CartItem");
-  if (!localSData) {
-    return [];
+  if (typeof window !== 'undefined') {
+    const localSData = localStorage.getItem("CartItem");
+    return localSData ? JSON.parse(localSData) : [];
   } else {
-    return JSON.parse(localSData);
+    return [];
   }
 };
+
 
 const initialState = {
   state: [],
@@ -55,12 +56,12 @@ export const CartProvider = ({ children }) => {
 
   const deleteItem = (id) => {
     dispatch({ type: "DELETEITEM", payload: id });
-    localStorage.setItem("Cartarry", JSON.stringify(state.CartItem));
+    localStorage.setItem("CartItem", JSON.stringify(state.CartItem));
   };
 
   const ClearAll = () => {
     dispatch({ type: "CLEAR-ALL" });
-    localStorage.setItem("Cartarry", JSON.stringify(state.CartItem));
+    localStorage.setItem("CartItem", JSON.stringify(state.CartItem));
   };
 
   useEffect(() => {
@@ -91,21 +92,21 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     const max = productList.map((elm) => elm.price);
     const maxPrice = Math.max(...max);
-    dispatch({ type: "SET_MAXPRICE", payload: maxPrice });
+    dispatch({ type: "SET-MAX-PRICE", payload: maxPrice });
   }, []);
 
   useEffect(() => {
     const color = productList.map((elm) => elm.color);
-    const fcolor = color.flat();
-    const Allcolor = ["All", ...new Set(fcolor)];
+    const fColor = color.flat();
+    const Allcolor = ["All", ...new Set(fColor)];
     dispatch({ type: "SET_COLOR", payload: Allcolor });
   }, []);
 
-  const innreament = (total) => {
-    dispatch({ type: "INCREAMENT", payload: total });
+  const increment = (total) => {
+    dispatch({ type: "INCREMENT", payload: total });
   };
-  const decreament = (total) => {
-    dispatch({ type: "DECREAMENT", payload: total });
+  const decrement = (total) => {
+    dispatch({ type: "DECREMENT", payload: total });
   };
   return (
     <CartContext.Provider
@@ -116,8 +117,8 @@ export const CartProvider = ({ children }) => {
         ClearAll,
         updateFilterProduct,
         clearFilter,
-        innreament,
-        decreament,
+        innreament: increment,
+        decreament: decrement,
       }}
     >
       {children}

@@ -58,12 +58,12 @@ export const cartReducer = (state, action) => {
     case "CLEAR_FILTER":
       return { ...state, filterProduct: state.product };
 
-    case "INCREAMENT":
+    case "INCREMENT":
       const totalProduct = action.payload;
       const i = state.amount <= totalProduct ? state.amount++ : totalProduct;
       return { ...state, amount: i };
 
-    case "DECREAMENT":
+    case "DECREMENT":
       const ii = state.amount > 1 ? state.amount-- : 1;
       return { ...state, amount: ii };
 
@@ -72,63 +72,63 @@ export const cartReducer = (state, action) => {
       const allData = state.filterProduct;
 
       if (text) {
-        const tempdata = state.product.filter((elm) => {
+        const tempData = state.product.filter((elm) => {
           return elm.name.toLowerCase().includes(text);
         });
-        return { ...state, filterProduct: tempdata };
+        return { ...state, filterProduct: tempData };
       }
 
       if (category !== "All") {
-        const tempdata = state.product.filter((elm) => {
+        const tempData = state.product.filter((elm) => {
           return elm.category === category;
         });
-        return { ...state, filterProduct: tempdata };
+        return { ...state, filterProduct: tempData };
       }
       if (brands !== "All") {
-        const tempdata = state.product.filter((elm) => {
+        const tempData = state.product.filter((elm) => {
           return elm.brand == brands;
         });
-        return { ...state, filterProduct: tempdata };
+        return { ...state, filterProduct: tempData };
       }
       if (colors !== "All") {
-        const tempdata = state.product.filter((elm) => {
+        const tempData = state.product.filter((elm) => {
           return elm.color.includes(colors);
         });
-        return { ...state, filterProduct: tempdata };
+        return { ...state, filterProduct: tempData };
       }
       if (range) {
-        const tempdata = state.product.filter((elm) => {
+        const tempData = state.product.filter((elm) => {
           return elm.price <= range;
         });
-        return { ...state, filterProduct: tempdata };
+        return { ...state, filterProduct: tempData };
       }
 
       if (sort === "a-z") {
-        const tempdata = state.product.sort((a, b) => {
+        const tempData = state.product.sort((a, b) => {
           return a.brand.localeCompare(b.brand);
         });
-        return { ...state, filterProduct: tempdata };
+        return { ...state, filterProduct: tempData };
       }
 
       if (sort === "z-a") {
-        const tempdata = state.product.sort((a, b) => {
+        const tempData = state.product.sort((a, b) => {
           return b.brand.localeCompare(a.brand);
         });
-        return { ...state, filterProduct: tempdata };
+        return { ...state, filterProduct: tempData };
       }
 
       if (sort === "low-to-high") {
-        const tempdata = state.product.sort((a, b) => {
+        const tempData = state.product.sort((a, b) => {
           return a.price - b.price;
         }, 0);
-        return { ...state, filterProduct: tempdata };
+        return { ...state, filterProduct: tempData };
       }
 
       if (sort === "high-to-low") {
-        const tempdata = state.product.sort((a, b) => {
+        const tempData = state.product.sort((a, b) => {
           return b.price - a.price;
         }, 0);
-        return { ...state, filterProduct: tempdata };
+        return { ...state, filterProduct: tempData };
       }
 
     case "CLEAR-ALL":
@@ -146,7 +146,7 @@ export const cartReducer = (state, action) => {
     case "SET_BRAND":
       return { ...state, brand: action.payload };
 
-    case "SET_MAXPRICE":
+    case "SET-MAX-PRICE":
       return {
         ...state,
         filters: { ...state.filters, maxprice: action.payload },

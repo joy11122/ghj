@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-import { productList } from "@/src/data/data";
+import { productList } from "@/src/data/DataList";
 import Card from "./Card";
 
 

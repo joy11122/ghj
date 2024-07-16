@@ -1,7 +1,7 @@
 "use client";
 import Quantity from "@/app/component/Quantity";
 import { useCart } from "@/src/context/cartContext";
-import { productList } from "@/src/data/data";
+import { productList } from "@/src/data/DataList";
 import Link from "next/link";
 
 import React, { useState } from "react";

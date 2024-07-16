@@ -38,9 +38,9 @@ const Page = ({ params }) => {
                 </button>
               ))}
               <Quantity total={s.total} />
-              <button className="btn btn-info rounded-0" onClick={() => handleAddToCart(s.id, color, amount, product)}>
-                Add To Cart
-              </button>
+              <a href="/Cart" className="btn btn-primary rounded-0" onClick={() =>handleAddToCart(s.id, color, amount, product)}>
+          Add to Cart
+              </a>
             </div>
           </div>
         </div>
