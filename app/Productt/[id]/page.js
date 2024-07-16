@@ -22,7 +22,7 @@ const Page = ({ params }) => {
             <div className="content ms-2 pt-2 pb-2">
               <h3 className="mb-3">{s.name}</h3>
               <div className="d-flex mt-2">
-                <h2>joy</h2>
+            
                 <h3>{s.price}</h3>
                 <del className="ms-2 mt-2">{s.price + 100}</del>
               </div>
