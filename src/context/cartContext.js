@@ -117,8 +117,8 @@ export const CartProvider = ({ children }) => {
         ClearAll,
         updateFilterProduct,
         clearFilter,
-        innreament: increment,
-        decreament: decrement,
+        increment,
+        decrement,
       }}
     >
       {children}
