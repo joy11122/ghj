@@ -466,3 +466,22 @@ footer input {
     background-color: crimson;
     width: 200px;
 }
+.PrdoductDetail{
+    width: 100%;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.vhfull{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vhfull  h1,h2{
+ 
+    color:crimson;
+    font-weight: bold;
+}

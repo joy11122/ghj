@@ -13,10 +13,10 @@ const Page = ({ params }) => {
 
   return (
     <>
-      <div className="container mt-3 color-section">
-        <div className="row g-3">
-          <div className="col-md-4 col-lg-4 col-sm-4">
-            <img className="w-100" style={{ height: 350 }} src={`../${s.image}`} alt="j" />
+      <div className="container PrdoductDetail mt-3 color-section">
+        <div className="row g-5">
+          <div className="col-md-4  col-lg-4 col-sm-4">
+            <img className="w-100"  style={{ height: 350}} src={`../${s.image}`} alt="j" />
           </div>
           <div className="col-md-8 col-sm-8 col-lg-8">
             <div className="content ms-2 pt-2 pb-2">

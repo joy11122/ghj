@@ -8,18 +8,18 @@ const CartList = ({ CartItem }) => {
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    const calculateTotalPrice = () => {
-      if (typeof window !== 'undefined' && localStorage.getItem("CartItem")) {
-        const totalItems = JSON.parse(localStorage.getItem("CartItem"));
-        const totalPrice = totalItems.reduce((acc, item) => {
-          return acc + (item.price * item.quantity);
-        }, 0);
-        setTotalPrice(totalPrice);
-      }
-    };
+   
     calculateTotalPrice();
   }, []);
-
+  const calculateTotalPrice = () => {
+    if (typeof window !== 'undefined' && localStorage.getItem("CartItem")) {
+      const totalItems = JSON.parse(localStorage.getItem("CartItem"));
+      const totalPrice = totalItems.reduce((acc, item) => {
+        return acc + (item.price * item.quantity);
+      }, 0);
+      setTotalPrice(totalPrice);
+    }
+  };
   if (!CartItem || CartItem.length === 0) {
     return (
       <div className="p-5">

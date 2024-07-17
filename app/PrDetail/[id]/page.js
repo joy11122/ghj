@@ -22,13 +22,13 @@ const Page = ({ params }) => {
 
   return (
     <>
-      <div className="container mt-5 p-5 color-section">
-        <div className="row g-3">
-          <Link href="/" className="fw-bold">
+      <div className="container PrdoductDetail color-section">
+        <div className="row g-5">
+          <Link href="/" className=" mt-5 mb-0">
             Home
           </Link>
           <div className="col-md-4">
-            <img className="w-100 h-auto" src={`../${product.image}`} alt={product.name} />
+            <img className="w-100" style={{height:350}} src={`../${product.image}`} alt={product.name} />
           </div>
           <div className="col-md-8">
             <div className="content ms-2 pt-2 pb-2">
