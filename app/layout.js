@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
             src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
             integrity="sha384-IQsoLXl5PILFhosVNubq7ALX+6IomF2Mx03p4JOa5f2lLkCVk6Mggw5UsvFYKX5N"
             crossOrigin="anonymous"
+            defer
           ></script>
           <script
             src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.min.js"
