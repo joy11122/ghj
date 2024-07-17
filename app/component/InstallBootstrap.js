@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const InstallBootstrap = () => {
   useEffect(() => {
     // Dynamically import the Bootstrap JS bundle
-    import('bootstrap/dist/js/bootstrap.bundle.min.js')
+    import('bootstrap/dist/js/bootstrap.bundle.js')
       .then(() => {
         console.log('Bootstrap bundle loaded');
       })
