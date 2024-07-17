@@ -4,8 +4,8 @@ import Social from "./Social";
 
 const Fotter = () => {
   return (
-    <div>
-      <footer className="container flex-wrap Justify-content-between mb-5 mt-5 align-items-center  bg-black text-light">
+    <div className="container-fluid bg-black">
+      <footer className="container flex-wrap Justify-content-between mb-5 mt-5 align-items-center   text-light">
         <div className="row">
           <div className="col-md-3 flex-wrap d-flex flex-column justify-content-center align-items-center p-3   ">
            <i className="bi bi-laptop display-6 "></i>
