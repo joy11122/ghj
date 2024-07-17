@@ -2,7 +2,7 @@ import "./globals.css";
 import "../public/booticon/font/bootstrap-icons.min.css";
 import Head from 'next/head';
 import Navbar2 from "./component/Navbar2";
-import Navbar2 from "./component/InstallBootstrap";
+import InstallBootstrap from "./component/InstallBootstrap";
 import Fotter from "./component/Fotter";
 import { CartProvider } from "@/src/context/cartContext";
 
