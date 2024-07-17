@@ -18,12 +18,12 @@ export default function RootLayout({ children }) {
         <script
           src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
           integrity="sha384-IQsoLXl5PILFhosVNubq7ALX+6IomF2Mx03p4JOa5f2lLkCVk6Mggw5UsvFYKX5N"
-          crossOrigin="anonymous"
+          crossOrigin="anonymous" defer
         ></script>
         <script
           src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.min.js"
           integrity="sha384-j0P37zC1cK1s7E80tqN/VL0n6QK9K94x8KEv9N1ks2EzH0KQjDzq4LDwi56BRz9K"
-          crossOrigin="anonymous"
+          crossOrigin="anonymous" defer
         ></script>
       </Head>
       <body className="bg">
