@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
             src="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.min.js"
             integrity="sha384-j0P37zC1cK1s7E80tqN/VL0n6QK9K94x8KEv9N1ks2EzH0KQjDzq4LDwi56BRz9K"
             crossOrigin="anonymous"
+            defer
           ></script>
     </Head>
       <body className="bg">
