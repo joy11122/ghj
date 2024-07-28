@@ -9,8 +9,9 @@ import { CartProvider } from "@/src/context/cartContext";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-<InstallBootstrap/>
+
       <body className="bg">
+    <InstallBootstrap/>
         <CartProvider>
           <Navbar2 />
           {children}
