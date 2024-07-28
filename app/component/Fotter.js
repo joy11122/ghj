@@ -9,16 +9,16 @@ const Fotter = () => {
         <div className="row">
           <div className="col-md-3 flex-wrap d-flex flex-column justify-content-center align-items-center p-3   ">
            <i className="bi bi-laptop display-6 "></i>
-               <p className="">
-              Lorem ipsum dolor sint <br />
-               earum molestias! Vel, <br />
-               reprehenderit. Vel,<br />
-                reprehenderit.
+               <p className="text-center">
+              Lorem ipsum dolor sint 
+               earum molestias! Ve
+               reprehenderit
+                reprehenderit
               </p>
            
           </div>
 
-          <div className="col-md-3 p-3 d-flex justify-content-center align-items-center ">
+          <div className="col-md-3  d-flex justify-content-center align-items-center ">
             <div>
               <span>Office</span>
               <p>
@@ -31,7 +31,7 @@ const Fotter = () => {
               <span>01751421014</span>
             </div>
           </div>
-          <div className=" flink col-md-3 p-3 d-flex flex-column  gap-2 justify-content-center align-items-center">
+          <div className=" flink col-md-3  d-flex flex-column  gap-2 justify-content-center align-items-center">
            
               <Link className="text-light text-decoration-none" href="/">
                 Home
