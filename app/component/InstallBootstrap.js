@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect } from 'react';
-import '/public/css/bootstrap.min.css';
+
 
 const InstallBootstrap = () => {
   useEffect(() => {
